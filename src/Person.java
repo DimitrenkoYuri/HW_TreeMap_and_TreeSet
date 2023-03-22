@@ -20,7 +20,14 @@ public class Person {
     public int getAge(){
         return this.age;
     }
-
+    public int surnameLenght() {
+        if (this.surname.contains(" ")) {
+            return this.surname.split(" ").length;
+        } else if (this.surname.contains("-")) {
+            return this.surname.split("-").length;
+        }
+        return 1;
+    }
     @Override
     public String toString() {
         return getName() + " " + getSurname() + ". возраст: " + getAge();
